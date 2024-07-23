@@ -1,0 +1,31 @@
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea {
+  border: 1px solid #bbcdfa !important;
+}
+
+.container-fluid {
+  overflow: auto;
+}
+
+.table-bordered,
+select.form-control,
+.border {
+  border: 1px solid #adadad !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dropdown-item {
+  color: black !important;
+}
+
+.notif-btn:hover {
+  color: white;
+}

@@ -1,0 +1,39 @@
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+input[type="email"],textarea{
+  border: 1px solid #bbcdfa !important;
+}
+
+input[type="date"]{
+  padding: 10px;
+}
+
+.container-fluid {
+  overflow: auto;
+}
+
+.table-bordered,
+select.form-control {
+  border: 1px solid #adadad;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.dropdown-item{
+  color: black !important;
+}
+
+.clause-status-icon{
+font-size: 1.4rem;
+}
+
+.border {
+  border: 1px solid #adadad !important;
+}
