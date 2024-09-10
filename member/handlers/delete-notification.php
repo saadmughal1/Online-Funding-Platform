@@ -8,7 +8,7 @@ if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
     $db = new Db();
-    $notification = new Notification($db->getConnection(), $id, null, null, null, null);
+    $notification = new Notification($db->getConnection(), $id, null, null, null);
 
     $notification->delete();
     header("LOCATION: ../view-notifications.php");

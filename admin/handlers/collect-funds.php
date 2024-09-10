@@ -22,48 +22,18 @@ if (isset($_POST["clauseId"]) && isset($_POST["ids"]) && isset($_POST["amount"])
 
     $amountDivide = $amount / count($ids);
 
-    $notification = new Notification($db->getConnection(), null, null, $clauseId,null);
+    $notification = new Notification($db->getConnection(), null, null, $clauseId, null);
 
-    // foreach ($ids as $key => $id) {
-
-    //     $netbalance = $member->getNetBalance($id);
-    //     if ($cres["funds"] < $cres["amount"]) {
-    //         $remaining = $cres["amount"] - $cres["funds"];
-
-    //         if ($amountDivide > $remaining) {
-    //             if ($remaining > $netbalance) {
-    //                 $member->addExpense($id, $clauseId, $netbalance);
-    //                 $clause->addFunds($clauseId, $netbalance);
-    //             } else {
-    //                 // cut remaining from net balance
-    //                 $member->addExpense($id, $clauseId, $remaining);
-    //                 $clause->addFunds($clauseId, $remaining);
-    //             }
-    //         } else {
-    //             if ($amountDivide > $netbalance) {
-    //                 $member->addExpense($id, $clauseId, $netbalance);
-    //                 $clause->addFunds($clauseId, $netbalance);
-    //             } else {
-    //                 // cut remaining from net balance
-    //                 $member->addExpense($id, $clauseId,  $amountDivide);
-    //                 $clause->addFunds($clauseId,  $amountDivide);
-    //             }
-    //         }
-    //     }
-
-    // }
-
-
-    
     foreach ($ids as $key => $id) {
         $netbalance = $member->getNetBalance($id);
-        $amount = ($amountDivide > $netbalance) ? $netbalance : $amountDivide;
-        $notification->sendNotification($id,$amount);
-        $member->addExpense($id, $clauseId, $amount);
-        $clause->addFunds($clauseId, $amount);
+        $tempAmmount = ($amountDivide > $netbalance) ? $netbalance : $amountDivide;
+        $notification->sendNotification($id, $tempAmmount);
+        $member->addExpense($id, $clauseId, $tempAmmount);
+        $clause->addFunds($clauseId, $tempAmmount);
     }
-    
 
-    foreach ($sendNotification as $key => $id) {
+    $cres = $clause->getClauseById()->fetch_assoc();
+    if (($cres["amount"] - $cres["funds"]) < 1) {
+        $clause->resolveDecimal($clauseId, $cres["amount"]);
     }
 }

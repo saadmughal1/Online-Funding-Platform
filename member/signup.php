@@ -28,8 +28,10 @@ if (isset($_SESSION["member_id"])) {
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
                             <h1 class="text-center">Member SignUp</h1>
-                            <h6 class="text-center text-danger">
-                                
+
+                            <h6 class="text-center text-danger"><?php if (isset($_GET["err"])) echo $_GET["err"]; ?></h6>
+                            <h6 class="text-center text-success"><?php if (isset($_GET["msg"])) echo $_GET["msg"]; ?></h6>
+
                             <form class="forms-sample" method="POST" action="handlers/signup.php">
 
                                 <div class="form-group">
@@ -44,13 +46,14 @@ if (isset($_SESSION["member_id"])) {
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                                 </div>
 
-                                <h6 class="text-danger">
-                                    <?php if (isset($_GET["err"])) echo $_GET["err"]; ?></h6>
                                 <div class="form-group d-flex justify-content-center">
                                     <button type="submit" class="btn btn-gradient-primary me-2">Signup</button>
                                 </div>
 
+                                <h6 class="text-primary text-center">Already have an account? <a href="./login">Login</a></h6>
+
                             </form>
+
                         </div>
                     </div>
                 </div>

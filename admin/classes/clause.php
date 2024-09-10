@@ -66,4 +66,15 @@ class Clause
         }
         die("Update Query Failed: " . $this->connection->error);
     }
+
+
+    public function resolveDecimal($id, $amount)
+    {
+        $sql = "UPDATE `clause` SET `funds` = $amount WHERE `id` = $id";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("Update Query Failed: " . $this->connection->error);
+    }
 }

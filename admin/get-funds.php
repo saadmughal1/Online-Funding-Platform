@@ -181,6 +181,7 @@ $clause = new Clause($db->getConnection());
       });
 
       $("#collect-button").click(function(e) {
+
         e.preventDefault();
         var clauseId = $('#selected-clause').val()
 
@@ -197,6 +198,8 @@ $clause = new Clause($db->getConnection());
         }
 
         var amount = $("#display-amount").text().replace("Amount: ", "");
+
+
         $.ajax({
           type: "POST",
           url: "handlers/collect-funds.php",
