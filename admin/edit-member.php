@@ -55,22 +55,22 @@ $row = $member->getUserById()->fetch_assoc();
 
                                         <div class="form-group">
                                             <label for="user-name">Username</label>
-                                            <input type="text" class="form-control" name="username" id="user-name" placeholder="Username" value="<?php echo $row["username"] ?>">
+                                            <input type="text" class="form-control" name="username" id="user-name" placeholder="Username" value="<?php echo $row["username"] ?>" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="email">Email address</label>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $row["email"] ?>">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $row["email"] ?>" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="password">Password</label>
-                                            <input type="text" class="form-control" name="password" id="password" placeholder="Password" value="<?php echo $row["password"] ?>">
+                                            <input type="text" class="form-control" name="password" id="password" placeholder="Password" value="<?php echo $row["password"] ?>" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="initial-amount">Initial Amount</label>
-                                            <input type="number" class="form-control" name="initial-amount" id="initial-amount" placeholder="Initial Amount" value="<?php echo $row["initial_amount"]; ?>">
+                                            <input type="number" class="form-control" name="initial-amount" id="initial-amount" placeholder="Initial Amount" value="<?php echo $row["initial_amount"]; ?>" required>
                                         </div>
 
                                         <h6 class="text-danger">

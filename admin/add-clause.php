@@ -40,17 +40,17 @@ $db = new Db();
 
                     <div class="form-group">
                       <label for="clause-name">Clause Name</label>
-                      <input type="text" class="form-control" id="clause-name" placeholder="Clause Name" name="name">
+                      <input type="text" class="form-control" id="clause-name" placeholder="Clause Name" name="name" required>
                     </div>
 
                     <div class="form-group">
                       <label for="clause-purpose">Purpose</label>
-                      <textarea type="text" class="form-control" id="clause-purpose" placeholder="Purpose" name="purpose"></textarea>
+                      <textarea type="text" class="form-control" id="clause-purpose" placeholder="Purpose" name="purpose" required></textarea>
                     </div>
 
                     <div class="form-group">
                       <label for="clause-amount">Clause Amount</label>
-                      <input type="number" class="form-control" id="clause-amount" placeholder="Clause Amount" name="amount">
+                      <input type="number" class="form-control" id="clause-amount" placeholder="Clause Amount" name="amount" required>
                     </div>
                     <h6 class="text-danger">
                       <?php if (isset($_GET["err"])) echo $_GET["err"]; ?></h6>

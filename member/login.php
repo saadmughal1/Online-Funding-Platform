@@ -33,11 +33,11 @@ if (isset($_SESSION["member_id"])) {
               <form class="pt-3" method="POST" action="handlers/login.php">
 
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" required>
                 </div>
 
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
                 </div>
 
                 <div class="mt-3 d-flex justify-content-center">

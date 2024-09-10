@@ -50,7 +50,7 @@ $db = new Db();
                   <form class="forms-sample" method="POST" action="handlers/deposit-amount.php">
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
                     <div class="form-group">
-                      <input type="number" class="form-control" name="deposit-amount" placeholder="Enter Amount">
+                      <input type="number" class="form-control" name="deposit-amount" placeholder="Enter Amount" required>
                     </div>
 
                     <h6 class="text-danger">

@@ -57,17 +57,17 @@ if (!isset($_GET["id"]) || empty($_GET["id"])) {
 
                                         <div class="form-group">
                                             <label for="clause-name">Clause Name</label>
-                                            <input type="text" class="form-control" id="clause-name" placeholder="Clause Name" name="name" value="<?php echo $row["name"] ?>">
+                                            <input type="text" class="form-control" id="clause-name" placeholder="Clause Name" name="name" value="<?php echo $row["name"] ?>" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="clause-purpose">Purpose</label>
-                                            <textarea type="text" class="form-control" id="clause-purpose" placeholder="Purpose" name="purpose"><?php echo $row["purpose"] ?></textarea>
+                                            <textarea type="text" class="form-control" id="clause-purpose" placeholder="Purpose" name="purpose" required><?php echo $row["purpose"] ?></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="clause-amount">Clause Amount</label>
-                                            <input type="number" class="form-control" id="clause-amount" placeholder="Clause Amount" name="amount" value="<?php echo $row["amount"] ?>">
+                                            <input type="number" class="form-control" id="clause-amount" placeholder="Clause Amount" name="amount" value="<?php echo $row["amount"] ?>" required>
                                         </div>
 
                                         <h6 class="text-danger">

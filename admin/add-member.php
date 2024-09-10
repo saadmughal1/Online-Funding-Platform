@@ -41,22 +41,22 @@ $db = new Db();
 
                     <div class="form-group">
                       <label for="user-name">Username</label>
-                      <input type="text" class="form-control" name="username" id="user-name" placeholder="Username">
+                      <input type="text" class="form-control" name="username" id="user-name" placeholder="Username" required>
                     </div>
 
                     <div class="form-group">
                       <label for="email">Email address</label>
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                     </div>
 
                     <div class="form-group">
                       <label for="password">Password</label>
-                      <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+                      <input type="text" class="form-control" name="password" id="password" placeholder="Password" required>
                     </div>
 
                     <div class="form-group">
                       <label for="initial-amount">Initial Amount</label>
-                      <input type="number" class="form-control" name="initial-amount" id="initial-amount" placeholder="Initial Amount">
+                      <input type="number" class="form-control" name="initial-amount" id="initial-amount" placeholder="Initial Amount" required>
                     </div>
 
                     <h6 class="text-danger">
@@ -66,6 +66,7 @@ $db = new Db();
                     </div>
 
                   </form>
+                  
                 </div>
               </div>
             </div>

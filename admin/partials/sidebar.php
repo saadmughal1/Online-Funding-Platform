@@ -63,12 +63,12 @@
       </a>
     </li>
 
-    <!-- <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link" href="deposit-amount.php">
         <span class="menu-title">Deposit Amount</span>
         <i class="mdi mdi-cash menu-icon"></i>
       </a>
-    </li> -->
+    </li>
 
   </ul>
 </nav>
