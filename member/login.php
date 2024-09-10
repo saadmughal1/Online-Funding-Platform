@@ -28,8 +28,9 @@ if (isset($_SESSION["member_id"])) {
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
               <h1 class="text-center">Member Login</h1>
-              <h6 class="text-center text-danger">
-                <?php if (isset($_GET["err"])) echo $_GET["err"]; ?></h6>
+              <h6 class="text-center text-danger"><?php if (isset($_GET["err"])) echo $_GET["err"]; ?></h6>
+              <h6 class="text-center text-success"><?php if (isset($_GET["msg"])) echo $_GET["msg"]; ?></h6>
+                
               <form class="pt-3" method="POST" action="handlers/login.php">
 
                 <div class="form-group">

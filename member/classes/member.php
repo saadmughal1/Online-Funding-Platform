@@ -137,4 +137,25 @@ class Member
         $interval = $startDate->diff($endDate);
         return $interval->y;
     }
+
+    public function isEmailAlreadyAvailable()
+    {
+        $sql = "SELECT *  FROM `member` WHERE `email` = '$this->email'";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("Select Query Failed: " . $this->connection->error);
+    }
+
+    public function addMember()
+    {
+        $currentDate = date("Y-m-d");
+        $sql = "INSERT INTO `member`(`username`, `password`, `email`,`initial_amount`,`date`) VALUES ('$this->username','$this->password','$this->email',0,'$currentDate');";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("Insert Query Failed: " . $this->connection->error);
+    }
 }

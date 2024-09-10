@@ -22,13 +22,17 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     $result = $member->login();
 
     if ($result->num_rows > 0) {
-
         $row = $result->fetch_assoc();
 
-        $_SESSION["member_id"] = $row["id"];
-        $_SESSION["member_username"] = $row["username"];
 
-        header("LOCATION: ../");
+        if ($row["status"] == 1) {
+            $_SESSION["member_id"] = $row["id"];
+            $_SESSION["member_username"] = $row["username"];
+            header("LOCATION: ../");
+        } else {
+            header("LOCATION: ../login?err=Account%20is%20deactivated%2C%20please%20contact%20admin%20to%20activate");
+            exit();
+        }
     } else {
         header("LOCATION: ../login.php?err=Invalid username and password");
     }

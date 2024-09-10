@@ -31,7 +31,7 @@ class Member
     public function addMember()
     {
         $currentDate = date("Y-m-d");
-        $sql = "INSERT INTO `member`(`username`, `password`, `email`,`initial_amount`,`date`) VALUES ('$this->username','$this->password','$this->email',$this->initial_amount,'$currentDate');";
+        $sql = "INSERT INTO `member`(`username`, `password`, `email`,`initial_amount`,`date`,`status`) VALUES ('$this->username','$this->password','$this->email',$this->initial_amount,'$currentDate',1);";
         $result = $this->connection->query($sql);
         if ($result) {
             return $result;
@@ -51,13 +51,24 @@ class Member
 
     public function display()
     {
-        $sql = "SELECT *  FROM `member`;";
+        $sql = "SELECT *  FROM `member` where status = 1;";
         $result = $this->connection->query($sql);
         if ($result) {
             return $result;
         }
         die("Select Query Failed: " . $this->connection->error);
     }
+
+    public function displayInActiveMembers()
+    {
+        $sql = "SELECT *  FROM `member` where status = 0;";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("Select Query Failed: " . $this->connection->error);
+    }
+
 
     public function delete()
     {
@@ -88,6 +99,18 @@ class Member
         }
         die("Update Query Failed: " . $this->connection->error);
     }
+
+
+    public function activateAccount()
+    {
+        $sql = "UPDATE `member` SET `initial_amount` = $this->initial_amount , `status` = 1 WHERE `id` = $this->id;";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("Update Query Failed: " . $this->connection->error);
+    }
+
 
     public function getDepositById($id)
     {

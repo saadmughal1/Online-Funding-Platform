@@ -2,7 +2,7 @@
   <ul class="nav">
 
     <li class="nav-item">
-      <a class="nav-link" href="index.php">
+      <a class="nav-link" href="index">
         <span class="menu-title">Dashboard</span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
@@ -18,10 +18,11 @@
       </a>
       <div class="collapse" id="report">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="monthly-expense-report.php">Monthly Expense</a></li>
-          <li class="nav-item"> <a class="nav-link" href="yearly-expense-report.php">Yearly Expense</a></li>
-          <li class="nav-item"> <a class="nav-link" href="monthly-deposit-report.php">Monthly Deposit</a></li>
-          <li class="nav-item"> <a class="nav-link" href="yearly-deposit-report.php">Yearly Deposit</a></li>
+        <li class="nav-item"> <a class="nav-link" href="grand-report">grand-report</a></li>
+          <li class="nav-item"> <a class="nav-link" href="monthly-expense-report">Monthly Expense</a></li>
+          <li class="nav-item"> <a class="nav-link" href="yearly-expense-report">Yearly Expense</a></li>
+          <li class="nav-item"> <a class="nav-link" href="monthly-deposit-report">Monthly Deposit</a></li>
+          <li class="nav-item"> <a class="nav-link" href="yearly-deposit-report">Yearly Deposit</a></li>
         </ul>
       </div>
     </li>
@@ -35,8 +36,8 @@
       </a>
       <div class="collapse" id="member-details">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="view-members.php">View Members</a></li>
-          <li class="nav-item"> <a class="nav-link" href="add-member.php">Add Member Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="add-member">Add Member Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="view-members">View Members</a></li>
         </ul>
       </div>
     </li>
@@ -50,21 +51,21 @@
       </a>
       <div class="collapse" id="clause-details">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="view-clause.php">View Clause</a></li>
-          <li class="nav-item"> <a class="nav-link" href="add-clause.php">Add Clause</a></li>
+          <li class="nav-item"> <a class="nav-link" href="view-clause">View Clause</a></li>
+          <li class="nav-item"> <a class="nav-link" href="add-clause">Add Clause</a></li>
         </ul>
       </div>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="get-funds.php">
+      <a class="nav-link" href="get-funds">
         <span class="menu-title">Get Funds</span>
         <i class="mdi mdi-cash-multiple menu-icon"></i>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="deposit-amount.php">
+      <a class="nav-link" href="deposit-amount">
         <span class="menu-title">Deposit Amount</span>
         <i class="mdi mdi-cash menu-icon"></i>
       </a>
