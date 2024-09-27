@@ -47,7 +47,7 @@ $row = $member->getUserById()->fetch_assoc();
                             <div class="col-lg-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Total Deposit ledger - (<?php if(isset($row["username"])) echo $row["username"]; ?>)</h4>
+                                        <h4 class="card-title">Total Deposit ledger - (<?php if (isset($row["username"])) echo $row["username"]; ?>)</h4>
                                         <div class="container-fluid p-0">
                                             <table class="table table-bordered">
                                                 <thead>
@@ -55,6 +55,7 @@ $row = $member->getUserById()->fetch_assoc();
                                                         <th> # </th>
                                                         <th> Date </th>
                                                         <th> Amount </th>
+                                                        <th>Edit</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -73,6 +74,7 @@ $row = $member->getUserById()->fetch_assoc();
                                                             <td><?php echo ++$index; ?></td>
                                                             <td><?php echo $row["date"]; ?></td>
                                                             <td><?php echo $row["amount"]; ?></td>
+                                                            <td><a href="edit-deposit.php?did=<?php echo $row['id']; ?>&amount=<?php echo $row["amount"]; ?>&id=<?php echo $id; ?>"><i class="mdi mdi-pencil"></i></a></td>
                                                         </tr>
                                                     <?php
                                                     }

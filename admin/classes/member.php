@@ -361,4 +361,14 @@ class Member
         }
         die("Insert Query Failed: " . $this->connection->error);
     }
+
+    public function editDeposit($did, $amount)
+    {
+        $sql = "UPDATE total_deposit set amount = $amount where id = $did;";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("UPDATE Query Failed: " . $this->connection->error);
+    }
 }
