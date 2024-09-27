@@ -82,7 +82,7 @@ class Member
 
     public function getUserById()
     {
-        $sql = "SELECT `username`,`email`,`password`,`initial_amount` FROM `member` WHERE `id` = $this->id;";
+        $sql = "SELECT `username`,`email`,`password`,`initial_amount`,`date` FROM `member` WHERE `id` = $this->id;";
         $result = $this->connection->query($sql);
         if ($result) {
             return $result;

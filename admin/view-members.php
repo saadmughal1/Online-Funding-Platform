@@ -81,7 +81,7 @@ $db = new Db();
                               $joinMonth += 1;
                               $outstanding_amount = ($row["initial_amount"] * $joinMonth) - (empty($total_deposit["total"]) ? 0 : $total_deposit["total"]);
 
-                              if($outstanding_amount>0){
+                              if ($outstanding_amount > 0) {
                                 $grandTotaloutstandingAmount += $outstanding_amount;
                               }
 
@@ -91,11 +91,11 @@ $db = new Db();
                                 <td><?php echo $row["username"]; ?></td>
                                 <td><?php echo $row["email"]; ?></td>
                                 <td>******</td>
-                                <td>$<?php echo $row["initial_amount"]; ?></td>
-                                <td>$<a href="deposit-ledger.php?id=<?php echo $row["id"]; ?>"><?php echo empty($total_deposit["total"]) ? "0" : $total_deposit["total"]; ?></a></td>
-                                <td>$<?php echo $outstanding_amount; ?></td>
-                                <td>$<a href="expense-ledger.php?id=<?php echo $row["id"]; ?>"><?php echo (empty($total_expense["total"])) ? "0" : $total_expense["total"]; ?></a></td>
-                                <td>$<?php echo $netBalance ?></td>
+                                <td>$<?php echo number_format($row["initial_amount"], 2); ?></td>
+                                <td>$<a href="deposit-ledger.php?id=<?php echo $row["id"]; ?>"><?php echo empty($total_deposit["total"]) ? "0" : number_format($total_deposit["total"], 2); ?></a></td>
+                                <td>$<?php echo number_format($outstanding_amount, 2); ?></td>
+                                <td>$<a href="expense-ledger.php?id=<?php echo $row["id"]; ?>"><?php echo (empty($total_expense["total"])) ? "0" : number_format($total_expense["total"], 2); ?></a></td>
+                                <td>$<?php echo number_format($netBalance, 2);  ?></td>
                                 <td><a href="edit-member.php?id=<?php echo $row["id"]; ?>"><i class="mdi mdi-pencil"></i></a></td>
                               </tr>
 

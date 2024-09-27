@@ -8,7 +8,7 @@
       </a>
     </li>
 
-    
+
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#report" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-title">Report</span>
@@ -18,7 +18,7 @@
       </a>
       <div class="collapse" id="report">
         <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link" href="grand-report">grand-report</a></li>
+          <li class="nav-item"> <a class="nav-link" href="grand-report">grand-report</a></li>
           <li class="nav-item"> <a class="nav-link" href="monthly-expense-report">Monthly Expense</a></li>
           <li class="nav-item"> <a class="nav-link" href="yearly-expense-report">Yearly Expense</a></li>
           <li class="nav-item"> <a class="nav-link" href="monthly-deposit-report">Monthly Deposit</a></li>
