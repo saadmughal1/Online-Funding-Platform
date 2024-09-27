@@ -90,7 +90,7 @@ $db = new Db();
                                 <th><?php echo ++$index; ?></th>
                                 <td><?php echo $row["username"]; ?></td>
                                 <td><?php echo $row["email"]; ?></td>
-                                <td><?php echo $row["password"]; ?></td>
+                                <td>******</td>
                                 <td>$<?php echo $row["initial_amount"]; ?></td>
                                 <td>$<a href="deposit-ledger.php?id=<?php echo $row["id"]; ?>"><?php echo empty($total_deposit["total"]) ? "0" : $total_deposit["total"]; ?></a></td>
                                 <td>$<?php echo $outstanding_amount; ?></td>
