@@ -199,8 +199,8 @@ $clause = new Clause($db->getConnection());
         }
 
 
-        if (membersId.length >= amount) {
-          $("#modal-body-text").text("Please Select Members less than " + amount)
+        if (membersId.length > amount) {
+          $("#modal-body-text").text("Please Select Members less than or equal to " + Math.floor(amount));
           $('#alert-modal').modal('show');
           return;
         }
