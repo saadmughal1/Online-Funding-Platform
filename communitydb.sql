@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2024 at 09:37 PM
+-- Generation Time: Oct 01, 2024 at 10:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
+(1, 'admin', 'Admin0');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `total_deposit` (
 CREATE TABLE `total_expense` (
   `id` int(4) NOT NULL,
   `mid` int(4) NOT NULL,
-  `amount` bigint(20) NOT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
   `cid` int(4) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

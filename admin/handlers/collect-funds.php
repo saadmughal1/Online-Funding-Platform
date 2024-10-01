@@ -18,22 +18,41 @@ if (isset($_POST["clauseId"]) && isset($_POST["ids"]) && isset($_POST["amount"])
     $member = new Member($db->getConnection());
 
     $clause = new Clause($db->getConnection(), $clauseId);
-    $cres = $clause->getClauseById()->fetch_assoc();
 
-    $amountDivide = $amount / count($ids);
-
+    $amountDivide = floor($amount / count($ids));
     $notification = new Notification($db->getConnection(), null, null, $clauseId, null);
 
+
+
+
+    $collectEach = 0;
     foreach ($ids as $key => $id) {
         $netbalance = $member->getNetBalance($id);
         $tempAmmount = ($amountDivide > $netbalance) ? $netbalance : $amountDivide;
         $notification->sendNotification($id, $tempAmmount);
         $member->addExpense($id, $clauseId, $tempAmmount);
         $clause->addFunds($clauseId, $tempAmmount);
+
+
+        $collectEach += $tempAmmount;
     }
 
-    $cres = $clause->getClauseById()->fetch_assoc();
-    if (($cres["amount"] - $cres["funds"]) < 1) {
-        $clause->resolveDecimal($clauseId, $cres["amount"]);
+    $remainingAmount = $amount - $collectEach;
+
+    if ($remainingAmount > 0) {
+        echo json_encode([
+            "success" => true,
+            "message" => "$$remainingAmount remains to be collected. Please select the members to collect the amount again."
+        ]);
+    } else {
+        echo json_encode([
+            "success" => true,
+            "message" => "All amounts have been collected successfully."
+        ]);
     }
+} else {
+    echo json_encode([
+        "success" => false,
+        "message" => "Invalid request. Please provide all required data."
+    ]);
 }

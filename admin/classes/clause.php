@@ -77,4 +77,13 @@ class Clause
         }
         die("Update Query Failed: " . $this->connection->error);
     }
+    public function getContributions($cid)
+    {
+        $sql = "SELECT te.*, m.username from total_expense te join member m on m.id = te.mid where te.cid = $cid;";
+        $result = $this->connection->query($sql);
+        if ($result) {
+            return $result;
+        }
+        die("Update Query Failed: " . $this->connection->error);
+    }
 }

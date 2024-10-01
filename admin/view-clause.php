@@ -66,10 +66,14 @@ $clause = new Clause($db->getConnection());
                               <tr>
                                 <th><?php echo ++$index; ?></th>
                                 <td><?php echo $row["name"]; ?></td>
-                                <td><p style="text-wrap:wrap;"><?php echo $row["purpose"]; ?></p></td>
+                                <td>
+                                  <p style="text-wrap:wrap;"><?php echo $row["purpose"]; ?></p>
+                                </td>
                                 <td>$<?php echo $row["amount"]; ?></td>
-                                <td>$<?php echo $row["funds"]; ?></td>
-                                <td><?php  echo ($row["funds"] == $row["amount"])?'<i class="mdi mdi-check-circle text-success clause-status-icon"></i>':'<i class="mdi mdi-close-circle text-danger clause-status-icon"></i>' ?></td>
+                                <td>
+                                  <a href="contributions?cid=<?php echo $row['id']; ?>">$<?php echo $row["funds"]; ?></a>
+                                </td>
+                                <td><?php echo ($row["funds"] == $row["amount"]) ? '<i class="mdi mdi-check-circle text-success clause-status-icon"></i>' : '<i class="mdi mdi-close-circle text-danger clause-status-icon"></i>' ?></td>
                                 <td><a href="edit-clause.php?id=<?php echo $row["id"]; ?>"><i class="mdi mdi-pencil"></i></a></td>
                               </tr>
                           <?php

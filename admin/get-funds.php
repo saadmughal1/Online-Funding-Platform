@@ -161,7 +161,7 @@ $clause = new Clause($db->getConnection());
         var selectedOption = $(this).find(":selected");
         var totalAmount = selectedOption.data("amount");
         var totalFunds = selectedOption.data("funds");
-        $("#display-amount").text(`Amount: ${totalAmount - totalFunds}`);
+        $("#display-amount").text(`Amount: ${(totalAmount - totalFunds).toFixed(2)}`);
       });
 
       var membersId = [];
@@ -184,6 +184,7 @@ $clause = new Clause($db->getConnection());
 
         e.preventDefault();
         var clauseId = $('#selected-clause').val()
+        var amount = $("#display-amount").text().replace("Amount: ", "");
 
         if (membersId.length == 0) {
           $("#modal-body-text").text("Please select at least one member")
@@ -197,7 +198,12 @@ $clause = new Clause($db->getConnection());
           return;
         }
 
-        var amount = $("#display-amount").text().replace("Amount: ", "");
+
+        if (membersId.length >= amount) {
+          $("#modal-body-text").text("Please Select Members less than " + amount)
+          $('#alert-modal').modal('show');
+          return;
+        }
 
 
         $.ajax({
@@ -209,6 +215,9 @@ $clause = new Clause($db->getConnection());
             "amount": amount
           },
           success: function(response) {
+            // console.log(response);
+            const res = JSON.parse(response);
+            alert(res.message);
             window.location = "get-funds.php";
           }
         });
